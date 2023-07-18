@@ -4,9 +4,12 @@
 *** THIS TOOL IS UNDER DEVELOPMENT***
 
 Welcome, this is a notebook script for a predictor based on convolutional neural networks called Convolutional neural networks for Cressdnaviricota Taxonomy. Using this script you can analyze fasta/multifasta files of Cressdnaviricota viruses, and quickly get a taxonomy prediction with blast confirmation. Currently, the dataset used for predictions is based on the ICTV VMR release (https://ictv.global/vmr) from 08/31/2022. 
+
 The faster way to use this tool is to run the from the Colab directory, which already has Python3 and TensorFlow for the main script ‘Concret_predictor.ipynb’. If you wish to run it locally is necessary to install Python and TensorFlow in one environment, and then use Python3 to run the ‘concret_prediction.py’, as better explained below. Also, as BLAST is used for each sample, for running locally you must install it as explained for different OS in the link: (https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html). For Colab this is done already in the script.
+
 This tool is in version 1.0, and still under development, in case o errors, please contact us.
-*soon* Also available on GitHub: https://github.com/ruialgomes/ConCreT *soon*
+
+Also available on Colab: [https://github.com/ruialgomes/ConCre](https://drive.google.com/drive/u/0/folders/1xL2dN3VTwxi9XZCs7oPM4rbdVOjaHTBl)T 
 
 Any questions or suggestions, feel free to contact me at the email address: ruitherarthur@gmail.com 
 
