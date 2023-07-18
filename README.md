@@ -9,7 +9,7 @@ The faster way to use this tool is to run the from the Colab directory, which al
 
 This tool is in version 1.0, and still under development, in case o errors, please contact us.
 
-Also available on Colab: [https://github.com/ruialgomes/ConCre](https://drive.google.com/drive/u/0/folders/1xL2dN3VTwxi9XZCs7oPM4rbdVOjaHTBl)T 
+Also available on Colab: [https://drive.google.com/drive/u/0/folders/1xL2dN3VTwxi9XZCs7oPM4rbdVOjaHTBl](https://drive.google.com/drive/u/0/folders/1xL2dN3VTwxi9XZCs7oPM4rbdVOjaHTBl)
 
 Any questions or suggestions, feel free to contact me at the email address: ruitherarthur@gmail.com 
 
