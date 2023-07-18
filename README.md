@@ -38,7 +38,7 @@ python concret_prediction.py --in “yourFasta.fasta” 		for Windows
 or
 python3 concret_prediction.py --in “yourFasta.fasta” 		for  Unix/Mac
 
- Or use the GUI option with:
+Or use the GUI option with:
 
 python concret_prediction_GUI.py 		for Windows
 or
@@ -49,12 +49,12 @@ When you finish, deactivate the venv with:
 deactivate
 
 **Execultables**
-
-Linux64X  *Under tests*
+**
+Linux64X**  ***Under tests***
 Download the folder “ConCreTv1.0_linux64”, and extract it from the zip file at the desired directory. To run the script open the terminal, navigate to the extraction directory, and run the line command, explained below, directly from it. The output will be saved in the output folder by default.
 
 
-Command line options
+**Command line options**
 
 --in			The input path to the query file. The default is the example file.
 --mode	l 		A path to the model directory. The default is the Cressdnaviricota model.
@@ -63,7 +63,7 @@ Command line options
 --save			To select if you want to save the blast results files. The default is no.
 --max-blast-hits	Maximum of BLAST hits that 'will be printed in the output. The default is 3.
 --gpu			Use GPU (if available). The default is using CPU.
-Command line examples
+**Command line examples**
 
 “concret_prediction  --in ’path/to/your/file.fasta’”
 
