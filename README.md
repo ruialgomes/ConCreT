@@ -7,7 +7,7 @@ Welcome, this is a script for a predictor based on convolutional neural networks
 
 The faster way to use this tool is to run the from the Colab directory, which already has Python3 and TensorFlow for the main script ‘Concret_predictor.ipynb’. If you wish to run it locally is necessary to install Python and TensorFlow in one environment, and then use Python3 to run the ‘concret_prediction.py’, as better explained below. Also, as BLAST is used for each sample, for running locally you must install it as explained for different OS in the link: (https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html). For Colab this is done already in the script.
 
-This tool is in version 1.0, and still under development, in case of errors, please contact us.
+For GPU predictions, with a really faster execution time, it is necessary to be available on the computer, which is possible for some graphic cards, directly for NVIDIA, but you might need to install some extra libraries in TensorFlow for Intel or AMD.  This tool is in version 1.0, and still under development, in case of errors, please contact us.
 
 Also available on Colab: [https://drive.google.com/drive/u/0/folders/1xL2dN3VTwxi9XZCs7oPM4rbdVOjaHTBl](https://drive.google.com/drive/u/0/folders/1xL2dN3VTwxi9XZCs7oPM4rbdVOjaHTBl)
 
