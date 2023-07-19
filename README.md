@@ -56,19 +56,19 @@ Download the folder “ConCreTv1.0_linux64”, and extract it from the zip file 
 
 **Command line options**<br/>
 
---in      The input path to the query file. The default is the example file.
+--in &nbsp;&nbsp;&nbsp;&nbsp;The input path to the query file. The default is the example file.
 
---model       A path to the model directory. The default is the Cressdnaviricota model.
+--model &nbsp;&nbsp;&nbsp;&nbsp; A path to the model directory. The default is the Cressdnaviricota model.
 
---out       A path for the output directory, where an output folder will be created. The default is the output directory.
+--out &nbsp;&nbsp;&nbsp;&nbsp; A path for the output directory, where an output folder will be created. The default is the output directory.
 
-'--output-name       A name for the result file. The default is the input file name.
+'--output-name &nbsp;&nbsp;&nbsp;&nbsp;A name for the result file. The default is the input file name.
 
---save       To select if you want to save the blast results files. The default is no.
+--save &nbsp;&nbsp;&nbsp;&nbsp; To select if you want to save the blast results files. The default is no.
 
---max-blast-hits       Maximum of BLAST hits that 'will be printed in the output. The default is 3.
+--max-blast-hits &nbsp;&nbsp;&nbsp;&nbsp; Maximum of BLAST hits that 'will be printed in the output. The default is 3.
 
---gpu      Use GPU (if available). The default is using CPU.
+--gpu &nbsp;&nbsp;&nbsp;&nbsp;Use GPU (if available). The default is using CPU.
 
 
 **Command line example**
