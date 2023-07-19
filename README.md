@@ -1,8 +1,5 @@
 # ConCreT
 
-
-*** THIS TOOL IS UNDER DEVELOPMENT***
-
 Welcome, this is a script for a predictor based on convolutional neural networks called Convolutional neural networks for Cressdnaviricota Taxonomy. Using this script you can analyze fasta/multi-fasta files of Cressdnaviricota viruses, and quickly get a taxonomy prediction with blast confirmation. Currently, the dataset used for predictions is based on the ICTV VMR release (https://ictv.global/vmr) from 08/31/2022. 
 
 The faster way to use this tool is to run the from the Colab directory, which already has Python3 and TensorFlow for the main script ‘Concret_predictor.ipynb’. If you wish to run it locally is necessary to install Python and TensorFlow in one environment, and then use Python3 to run the ‘concret_prediction.py’, as better explained below. Also, as BLAST is used for each sample, for running locally you must install it as explained for different OS in the link: (https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html). For Colab this is done already in the script.
@@ -18,7 +15,7 @@ Any questions or suggestions, feel free to contact me at the email address: ruit
 **Google Colab**
 Download the entire directory, extract it to a folder, and upload the entire folder to your drive. From there, open the .ipynb file with Google Colaboratory can change the paths to match your drive’s path and run the script.
 
-**Script .py**
+**Source code**
 Download the folder “ConCreTv1.0”, and extract it from the zip file at the desired directory. To run the script open the terminal, and navigate to the extraction directory. With Python3 already installed, inside the folder, you will create a new environment for TensorFlow installation. You can do that by using the command:
 
 python -m venv ’environment_name’  	for Windows.
