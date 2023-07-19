@@ -1,0 +1,4 @@
+>KM598397.1-Mithrilvirus_smaug : Mithrilvirus
+>MH617639.1-Galvornvirus_isengard : Galvornvirus
+>MT293418.1-Angainorvirus_turin : Angainorvirus
+>MT293416.1-Mazarbulvirus_hasufel : Mazarbulvirus

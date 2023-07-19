@@ -1,0 +1,6 @@
+>KT862223.1-Bonzesmacovirus_bovas1 : Bonzesmacovirus
+>KT862228.1-Cosmacovirus_bovas1 : Cosmacovirus
+>MK796234.1-Felismacovirus_lynas1 : Felismacovirus
+>KT862229.1-Bostasmacovirus_bovas1 : Bostasmacovirus
+>KM598410.1-Dragsmacovirus_draga1 : Dragsmacovirus
+>LC386204.1-Babosmacovirus_babas1 : Babosmacovirus

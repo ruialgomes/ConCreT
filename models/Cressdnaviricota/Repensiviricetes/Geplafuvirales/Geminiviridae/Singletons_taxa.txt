@@ -1,0 +1,2 @@
+>MN100000.1-Opuntia_virus_1 : Opunvirus
+>X84735.1-Tomato_pseudo-curly_top_virus : Topocuvirus

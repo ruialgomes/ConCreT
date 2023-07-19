@@ -1,0 +1,7 @@
+>JF755403.1-Ormalvirus_cirith : Ormalvirus
+>MH545531.1-Grondvirus_lorian : Grondvirus
+>KY487991.1-Aranruthvirus_numenor : Aranruthvirus
+>MT293421.1-Herugrimvirus_gladden : Herugrimvirus
+>MK012455.1-Palantirivirus_imlardis : Palantirivirus
+>MK738139.1-Arnorvirus_sauron : Arnorvirus
+>MH545530.1-Illuinvirus_amon : Illuinvirus
