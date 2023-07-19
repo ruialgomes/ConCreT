@@ -50,7 +50,7 @@ deactivate
 
 **Execultables**<br/>
 ***Linux64X*** <br/>
-****Under tests****
+*-Under tests-*
 Download the folder “ConCreTv1.0_linux64”, and extract it from the zip file at the desired directory. To run the script open the terminal, navigate to the extraction directory, and run the line command, explained below, directly from it. The output will be saved in the output folder by default.<br/>
 
 
