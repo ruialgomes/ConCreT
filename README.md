@@ -67,7 +67,7 @@ deactivate
 
 **Command line example**
 
-python3 concret_prediction_GUI.py  --in ’path/to/your/file.fasta’
+python3 concret_prediction.py  --in ’path/to/your/file.fasta’
 
 
 
