@@ -18,15 +18,15 @@ Download the entire directory, extract it to a folder, and upload the entire fol
 **Source code**<br/>
 Download the folder “ConCreTv1.0”, and extract it from the zip file at the desired directory. To run the script open the terminal, and navigate to the extraction directory. With Python3 already installed, inside the folder, you will create a new environment for TensorFlow installation. You can do that by using the command:
 
-**python -m venv ’environment_name’**  	for Windows.
+_python -m venv ’environment_name’_  	for Windows.
 or
-**python3 -m venv ’environment_name’** 	for Unix/Mac.
+_python3 -m venv ’environment_name’_	for Unix/Mac.
 
 Where you will change  “environment_name” to a name of your preference, like “concret_venv”. Then you need activate the environment using:
 
-**’environment_name’/Scripts/activate	**	for Windows
+_’environment_name’/Scripts/activate_	for Windows
 or
-**source ’environment_name’/bin/activate 	**	for Unix/Mac
+_source ’environment_name’/bin/activate_	for Unix/Mac
 
 Now you can install the libraries required to run (TensorFlow  and Numpy) using:
 
@@ -34,19 +34,19 @@ Now you can install the libraries required to run (TensorFlow  and Numpy) using:
 
 Then you can use the command line options, with more options below:
 
-**python concret_prediction.py --in “yourFasta.fasta” **		for Windows
+_python concret_prediction.py --in “yourFasta.fasta”_	for Windows
 or
-**python3 concret_prediction.py --in “yourFasta.fasta” **		for  Unix/Mac
+_python3 concret_prediction.py --in “yourFasta.fasta”_ 	for  Unix/Mac
 
 Or use the GUI option with:
 
-**python concret_prediction_GUI.py** 		for Windows
+_python concret_prediction_GUI.py_	for Windows
 or
-**python3 concret_prediction_GUI.py **		for  Unix/Mac
+_python3 concret_prediction_GUI.py_ 		for  Unix/Mac
 
 When you finish, deactivate the venv with:
 
-deactivate
+_deactivate_
 
 **Command line options**<br/>
 
