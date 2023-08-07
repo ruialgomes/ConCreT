@@ -30,7 +30,7 @@ _source ’environment_name’/bin/activate_	for Unix/Mac
 
 Now you can install the libraries required to run (TensorFlow  and Numpy) using:
 
-**pip install -r requirements.txt**
+_pip install -r requirements.txt_
 
 Then you can use the command line options, with more options below:
 
