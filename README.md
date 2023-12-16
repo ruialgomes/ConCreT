@@ -1,12 +1,14 @@
 # ConCreT
 
-Welcome, this is a script for a predictor based on convolutional neural networks called Convolutional neural networks for Cressdnaviricota Taxonomy. Using this script you can analyze fasta/multi-fasta files of Cressdnaviricota viruses, and quickly get a taxonomy prediction with blast confirmation. Currently, the dataset used for predictions is based on the ICTV VMR release (https://ictv.global/vmr) from 08/31/2022. 
+Welcome, this is a script for a predictor based on convolutional neural networks called Convolutional Neural Networks for Cressdnaviricota Taxonomy. Using this script you can analyze fasta/multi-fasta files of Cressdnaviricota viruses, and quickly get a taxonomy prediction with blast confirmation. Currently, the dataset used for predictions is based on the ICTV VMR release (https://ictv.global/vmr) from 08/31/2022. 
 
-The faster way to use this tool is to run the from the Colab directory, which already has Python3 and TensorFlow for the main script ‘Concret_predictor.ipynb’. If you wish to run it locally is necessary to install Python and TensorFlow in one environment, and then use Python3 to run the ‘concret_prediction.py’, as better explained below. Also, as BLAST is used for each sample, for running locally you must install it as explained for different OS in the link: (https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html). For Colab this is done already in the script.
+The faster way to use this tool is to run the from the Colab directory, which already has Python3 and TensorFlow for the main script ‘Concret_predictor.ipynb’. If you wish to run it locally is necessary to install Python and TensorFlow in one environment, and then use Python3 to run the ‘concret_prediction.py’, as better explained below. Also, as BLAST is used for each sample, for running locally you must install it as explained for different OS in the link: (https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html). For Colab this is already done in the script.
 
 For those who prefer graphical interfaces to select the files and parameters, there is also a GUI version. For GPU predictions, with a really faster execution time, it is necessary to be available on the computer, which is possible for some graphic cards, directly for NVIDIA, but you might need to install some extra libraries in TensorFlow for Intel or AMD.  This tool is in version 1.0, and still under development, in case of errors, please contact us.
 
 Also available on Colab: [https://drive.google.com/drive/u/0/folders/1xL2dN3VTwxi9XZCs7oPM4rbdVOjaHTBl](https://drive.google.com/drive/u/0/folders/1xL2dN3VTwxi9XZCs7oPM4rbdVOjaHTBl)
+
+If you use our tool, please remember to cite: https://pubmed.ncbi.nlm.nih.gov/37536450/ 
 
 Any questions or suggestions, feel free to contact me at the email address: ruitherarthur@gmail.com 
 
@@ -22,7 +24,7 @@ _python -m venv ’environment_name’_  	for Windows.
 or
 _python3 -m venv ’environment_name’_	for Unix/Mac.
 
-Where you will change  “environment_name” to a name of your preference, like “concret_venv”. Then you need activate the environment using:
+Where you will change  “environment_name” to a name of your preference, like “concret_venv”. Then you need to activate the environment using:
 
 _’environment_name’/Scripts/activate_	for Windows
 or
