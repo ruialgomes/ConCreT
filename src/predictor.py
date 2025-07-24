@@ -99,6 +99,7 @@ def parse_fasta_file(
             singletons_test_identifiers_list.append(identifier)
     sub_fasta_test_dic = {ident: fasta_test_dic[ident] for ident in singletons_test_identifiers_list}
 
+
     singletons_blast_results = blast_singletons_search(
         sub_fasta_test_dic,
         singletons_dic,
