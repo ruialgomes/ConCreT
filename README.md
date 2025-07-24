@@ -30,9 +30,9 @@ _pip install -r requirements.txt_
 
 Then you can use the command line options, with more options below:
 
-_python concret_prediction.py --in “yourFasta.fasta”_	for Windows
+_python concret.py --in “yourFasta.fasta”_	for Windows
 or
-_python3 concret_prediction.py --in “yourFasta.fasta”_ 	for  Unix/Mac
+_python3 concret.py --in “yourFasta.fasta”_ 	for  Unix/Mac
 
 When you finish, deactivate the venv with:
 
