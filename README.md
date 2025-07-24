@@ -6,15 +6,12 @@ The faster way to use this tool is to run the from the Colab directory, which al
 
 For those who prefer graphical interfaces to select the files and parameters, there is also a GUI version. For GPU predictions, with a really faster execution time, it is necessary to be available on the computer, which is possible for some graphic cards, directly for NVIDIA, but you might need to install some extra libraries in TensorFlow for Intel or AMD.  This tool is in version 1.0, and still under development, in case of errors, please contact us.
 
-Also available on Colab: [https://drive.google.com/drive/u/0/folders/1xL2dN3VTwxi9XZCs7oPM4rbdVOjaHTBl](https://drive.google.com/drive/u/0/folders/1xL2dN3VTwxi9XZCs7oPM4rbdVOjaHTBl)
-
 If you use our tool, please remember to cite: https://pubmed.ncbi.nlm.nih.gov/37536450/ 
 
 Any questions or suggestions, feel free to contact me at the email address: ruitherarthur@gmail.com 
 
 **Usage**<br/>
 
-**Source code**<br/>
 Download the folder “ConCreT”, and extract it from the zip file at the desired directory. To run the script open the terminal, and navigate to the extraction directory. With Python3 already installed, inside the folder, you will create a new environment for TensorFlow installation. You can do that by using the command:
 
 _python -m venv ’environment_name’_  	for Windows.
@@ -41,7 +38,7 @@ When you finish, deactivate the venv with:
 
 _deactivate_
 
-**Command line options**<br/>
+**Command line**<br/>
 
 --in &nbsp;&nbsp;&nbsp;&nbsp;The input path to the query file. The default is the example file.
 
