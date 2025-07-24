@@ -55,10 +55,4 @@ _deactivate_
 --gpu &nbsp;&nbsp;&nbsp;&nbsp;Use GPU (if available). The default is using CPU.
 
 
-**Command line example**
-
-python3 Concret.py  --in ’path/to/your/file.fasta’
-
-
-
 
