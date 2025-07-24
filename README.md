@@ -14,11 +14,8 @@ Any questions or suggestions, feel free to contact me at the email address: ruit
 
 **Usage**<br/>
 
-**Google Colab**<br/>
-Download the entire directory, extract it to a folder, and upload the entire folder to your drive. From there, open the .ipynb file with Google Colaboratory can change the paths to match your drive’s path and run the script.
-
 **Source code**<br/>
-Download the folder “ConCreTv1.0”, and extract it from the zip file at the desired directory. To run the script open the terminal, and navigate to the extraction directory. With Python3 already installed, inside the folder, you will create a new environment for TensorFlow installation. You can do that by using the command:
+Download the folder “ConCreT”, and extract it from the zip file at the desired directory. To run the script open the terminal, and navigate to the extraction directory. With Python3 already installed, inside the folder, you will create a new environment for TensorFlow installation. You can do that by using the command:
 
 _python -m venv ’environment_name’_  	for Windows.
 or
@@ -39,12 +36,6 @@ Then you can use the command line options, with more options below:
 _python concret_prediction.py --in “yourFasta.fasta”_	for Windows
 or
 _python3 concret_prediction.py --in “yourFasta.fasta”_ 	for  Unix/Mac
-
-Or use the GUI option with:
-
-_python concret_prediction_GUI.py_	for Windows
-or
-_python3 concret_prediction_GUI.py_ 		for  Unix/Mac
 
 When you finish, deactivate the venv with:
 
