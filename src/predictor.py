@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 from src.utils import encode_sequence, write_output, open_fasta, create_fasta_seq
 from src.parsing_utils import get_prediction_classes, get_tot_taxa_lvls, get_model_files, blast_sequences_list, \
-    BatchGenerator
+    BatchGenerator,get_singletons_test_identifiers_list
 
 
 def parse_fasta_file(
@@ -88,18 +88,14 @@ def parse_fasta_file(
         blast_genus_max_hits
     )
     write_output(logpath, f"Time took for genus blast: {round((time.time() - blastgenus_time) / 60, 2)} minutes.\n")
-
     #blast against singletons
     write_output(logpath,
                  f"Running blast against singletons for tested sequences with no predicted genus identity.\n")
     singletons_time = time.time()
-    singletons_test_identifiers_list = []
-    for identifier in fasta_test_ident_list:
-        if len(blast_results_dic[identifier]) == 0:
-            singletons_test_identifiers_list.append(identifier)
+
+    #get singletons list of identifiers with no genus blast
+    singletons_test_identifiers_list = get_singletons_test_identifiers_list(fasta_test_ident_list,blast_results_dic)
     sub_fasta_test_dic = {ident: fasta_test_dic[ident] for ident in singletons_test_identifiers_list}
-
-
     singletons_blast_results = blast_singletons_search(
         sub_fasta_test_dic,
         singletons_dic,

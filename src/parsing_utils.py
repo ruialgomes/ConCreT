@@ -18,6 +18,14 @@ def get_prediction_classes(path):
     return prediction_classes_list1
 
 
+def get_singletons_test_identifiers_list(fasta_test_ident_list,blast_results_dic):
+    singletons_test_identifiers_list = []
+    for identifier in fasta_test_ident_list:
+        if len(blast_results_dic[identifier]) == 0:
+            singletons_test_identifiers_list.append(identifier)
+    return singletons_test_identifiers_list
+
+
 def get_tot_taxa_lvls(path):
     if not os.path.isdir(path):
         return 0
