@@ -95,6 +95,46 @@ def get_model_files(dir_path, model_info_dic, singletons_taxa_dic, singletons_di
 
     return model_info_dic, singletons_taxa_dic, singletons_dic
 
+def compare_blast(
+        fasta_test_ident_list,
+        blast_results_dic,
+        singletons_blast_results,
+        singletons_taxa_dic,
+        taxa_prediction_idents_dic
+    ):
+    final_blast_results_dic = {}
+    for identifier in fasta_test_ident_list:
+
+        if blast_results_dic[identifier]:
+
+            if identifier not in singletons_blast_results.keys():
+                final_blast_results_dic[identifier] = blast_results_dic[identifier]
+            elif singletons_blast_results[identifier]:
+                for results in blast_results_dic[identifier]:
+
+                    if float(results[0][2]) > singletons_blast_results[identifier][0][2]:
+                        final_blast_results_dic[identifier] = results
+
+                    else:
+                        ident = singletons_blast_results[identifier][0][1]
+                        taxa_list1 = singletons_taxa_dic[ident].split(os.sep)[1:]
+                        taxa_list = [(taxa_list1[i], None) for i in range(1, len(taxa_list1))]
+                        taxa_prediction_idents_dic[identifier] = taxa_list
+                        final_blast_results_dic[identifier] = singletons_blast_results[identifier]
+
+            else:
+                final_blast_results_dic[identifier] = blast_results_dic[identifier]
+
+        elif singletons_blast_results[identifier]:
+            ident = singletons_blast_results[identifier][0][1]
+            taxa_list1 = singletons_taxa_dic[ident].split(os.sep)[1:]
+            taxa_list = [(taxa_list1[i], None) for i in range(1, len(taxa_list1))]
+            taxa_prediction_idents_dic[identifier] = taxa_list
+            final_blast_results_dic[identifier] = singletons_blast_results[identifier]
+
+        else:
+            final_blast_results_dic[identifier] = []
+    return final_blast_results_dic
 
 def blast_sequences_list(sequence_list_path, genus_path, seq_result_file_path):
     blast_cl = ["blastn",
@@ -114,3 +154,38 @@ def blast_sequences_list(sequence_list_path, genus_path, seq_result_file_path):
             results_list.append(line)
 
     return results_list, process.stderr.decode()
+
+
+def parse_results(final_blast_results_dic,taxa_prediction_idents_dic,csv_pred_file,csv_full_info_file):
+    for ident, rest_list in final_blast_results_dic.items():
+        if rest_list:
+            results_list_sorted = sorted(rest_list, key=lambda x: float(x[2]), reverse=True)
+            csv_pred_line = f"{ident},{taxa_prediction_idents_dic[ident][-1][0]},{results_list_sorted[0][1]}\n"
+            csv_fullinfo_line = f"{ident},"
+
+            for pred in taxa_prediction_idents_dic[ident]:
+                csv_fullinfo_line += f"{pred[0]}/{round(pred[1][np.argmax(pred[1])] * 100, 3) if pred[1] else 'NA'},"
+
+            for blast_result_list in results_list_sorted:
+
+                for idx, blast_result_info in enumerate(blast_result_list):
+                    if idx == 0: continue
+                    if idx == 2: blast_result_info = str(float(blast_result_info))
+                    csv_fullinfo_line += f"{blast_result_info},"
+
+            csv_fullinfo_line += "\n"
+
+            csv_pred_file.append(csv_pred_line)
+            csv_full_info_file.append(csv_fullinfo_line)
+        else:
+            csv_pred_line = f">{ident},{taxa_prediction_idents_dic[ident][-1][0]}\n"
+            csv_fullinfo_line = f">{ident},"
+
+            for pred in taxa_prediction_idents_dic[ident]:
+                csv_fullinfo_line += f"{pred[0]}/{round(pred[1][np.argmax(pred[1])] * 100, 3) if pred[1] else 'NA'},"
+            csv_fullinfo_line += "\n"
+
+            csv_pred_file.append(csv_pred_line)
+            csv_full_info_file.append(csv_fullinfo_line)
+
+

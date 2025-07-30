@@ -71,7 +71,7 @@ def main():
     blast_genus_max_hits = args.max_blast_hits
     batch_size = args.batch_size
 
-    print("Starting...")
+    print("Starting run!")
     #parsing the test input
     parse_fasta_file(
         init_test_file_path,

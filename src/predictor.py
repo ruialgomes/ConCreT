@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 from src.utils import encode_sequence, write_output, open_fasta, create_fasta_seq
 from src.parsing_utils import get_prediction_classes, get_tot_taxa_lvls, get_model_files, blast_sequences_list, \
-    BatchGenerator,get_singletons_test_identifiers_list
+    BatchGenerator,get_singletons_test_identifiers_list,parse_results,compare_blast
 
 
 def parse_fasta_file(
@@ -108,38 +108,13 @@ def parse_fasta_file(
     write_output(logpath, f"Time took for singletons blast: {round(time.time() - singletons_time, 2)} seconds.\n")
 
     #compare and reorganize blast results
-    final_blast_results_dic = {}
-    for identifier in fasta_test_ident_list:
-
-        if blast_results_dic[identifier]:
-
-            if identifier not in singletons_blast_results.keys():
-                final_blast_results_dic[identifier] = blast_results_dic[identifier]
-            elif singletons_blast_results[identifier]:
-                for results in blast_results_dic[identifier]:
-
-                    if float(results[0][2]) > singletons_blast_results[identifier][0][2]:
-                        final_blast_results_dic[identifier] = results
-
-                    else:
-                        ident = singletons_blast_results[identifier][0][1]
-                        taxa_list1 = singletons_taxa_dic[ident].split(os.sep)[1:]
-                        taxa_list = [(taxa_list1[i], None) for i in range(1, len(taxa_list1))]
-                        taxa_prediction_idents_dic[identifier] = taxa_list
-                        final_blast_results_dic[identifier] = singletons_blast_results[identifier]
-
-            else:
-                final_blast_results_dic[identifier] = blast_results_dic[identifier]
-
-        elif singletons_blast_results[identifier]:
-            ident = singletons_blast_results[identifier][0][1]
-            taxa_list1 = singletons_taxa_dic[ident].split(os.sep)[1:]
-            taxa_list = [(taxa_list1[i], None) for i in range(1, len(taxa_list1))]
-            taxa_prediction_idents_dic[identifier] = taxa_list
-            final_blast_results_dic[identifier] = singletons_blast_results[identifier]
-
-        else:
-            final_blast_results_dic[identifier] = []
+    final_blast_results_dic = compare_blast(
+        fasta_test_ident_list,
+        blast_results_dic,
+        singletons_blast_results,
+        singletons_taxa_dic,
+        taxa_prediction_idents_dic
+    )
 
     # format the final results
     write_output(logpath, f"Saving results...\n")
@@ -155,36 +130,13 @@ def parse_fasta_file(
         " eval.,"
         " cov.\n"
     ]
-    for ident, rest_list in final_blast_results_dic.items():
-        if rest_list:
-            results_list_sorted = sorted(rest_list, key=lambda x: float(x[2]), reverse=True)
-            csv_pred_line = f"{ident},{taxa_prediction_idents_dic[ident][-1][0]},{results_list_sorted[0][1]}\n"
-            csv_fullinfo_line = f"{ident},"
-
-            for pred in taxa_prediction_idents_dic[ident]:
-                csv_fullinfo_line += f"{pred[0]}/{round(pred[1][np.argmax(pred[1])] * 100, 3) if pred[1] else 'NA'},"
-
-            for blast_result_list in results_list_sorted:
-
-                for idx, blast_result_info in enumerate(blast_result_list):
-                    if idx == 0: continue
-                    if idx == 2: blast_result_info = str(float(blast_result_info))
-                    csv_fullinfo_line += f"{blast_result_info},"
-
-            csv_fullinfo_line += "\n"
-
-            csv_pred_file.append(csv_pred_line)
-            csv_full_info_file.append(csv_fullinfo_line)
-        else:
-            csv_pred_line = f">{ident},{taxa_prediction_idents_dic[ident][-1][0]}\n"
-            csv_fullinfo_line = f">{ident},"
-
-            for pred in taxa_prediction_idents_dic[ident]:
-                csv_fullinfo_line += f"{pred[0]}/{round(pred[1][np.argmax(pred[1])] * 100, 3) if pred[1] else 'NA'},"
-            csv_fullinfo_line += "\n"
-
-            csv_pred_file.append(csv_pred_line)
-            csv_full_info_file.append(csv_fullinfo_line)
+    #reformat results for csv format
+    csv_pred_file,csv_full_info_file = parse_results(
+        final_blast_results_dic,
+        taxa_prediction_idents_dic,
+        csv_pred_file,
+        csv_full_info_file
+    )
 
     #save results in the files
     with open(predpath, "w") as outfile:
